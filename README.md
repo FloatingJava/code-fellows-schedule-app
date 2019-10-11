@@ -26,12 +26,6 @@ No contribution guidelines at this point.
 
 #### User Stories
 
-"As a user, I want to be able to save my generated ed plans so that I can refer back to them later."
-"As a developer, I want the user to have a comfortable experience with the application."
-"As a developer, I want the application to be mobile first."
-"As a developer, I want to save the user information so that individuals can return to their saved ed plans."
-"As a user, I want to see my username displayed in the app pages while I am logged in."
-"As a developer, I want useful and descriptive error functions throughout the code actions to assist with debugging and communicating with the user."
 
 #### Wireframes
 ![alt text](path...)
