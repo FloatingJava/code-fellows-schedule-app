@@ -28,9 +28,8 @@ No contribution guidelines at this point.
 * As a USER, I want a clean and easy to use User Interface.
 * As a USER, I want to be able to save my generated education plans so that I can refer back to them later.
 * As a USER, I would like to see the complete course schedule so I could plan out my time at Code Fellows accordingly.
-* As a DEVELOPER, I want to save the users information so that they can reference to that in the future, or edit the existing plans.
-* As a DEVELOPER, I want useful and description error messages to alert the user if an error has occurred.
-* As a DEVELOPER, I want the application to be mobile first - MAYBE?
+* As a USER, I want to be able to save my course plans so that I can go back and edit them later on.
+* As a USER, I want there to be descriptive messages if I do something wrong or cause any errors.
 * As a STAFF MEMBER, I want the course information to be accurate to assist prospective users.
 * As a STAFF MEMBER, I want this to be easily manageable and up dateable if course information changes.
 
