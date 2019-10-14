@@ -37,7 +37,7 @@ public class ApplicationUserController {
     }
 
     @GetMapping("/signUp")
-    public String getRegistration(){
+    public String getSignUp(){
         return "signUp";
     }
 
