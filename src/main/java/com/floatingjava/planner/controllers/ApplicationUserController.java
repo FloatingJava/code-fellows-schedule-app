@@ -22,6 +22,8 @@ public class ApplicationUserController {
     @Autowired
     ApplicationUserRepository applicationUserRepository;
 
+    //Watch for issues between username vs email, Nicholas walked the other group through navigating it
+
     @PostMapping("/signup")
     public RedirectView createNewUser(String username, String password, String nameFirst, String nameLast){
 
