@@ -1,7 +1,6 @@
 package com.floatingjava.planner.controllers;
 
-import com.floatingjava.planner.models.ApplicationUserRepository;
-import com.floatingjava.planner.models.ApplicationUser;
+import com.floatingjava.planner.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -44,5 +43,21 @@ public class ApplicationUserController {
     @GetMapping("/logout")
     public RedirectView logout(){
         return new RedirectView("/");
+    }
+
+    @Autowired
+    CourseRepository courseRepository;
+
+    @PostMapping("addCourse")
+    public RedirectView addCourse(String code, String title, String startDate, String endDate, String track, String family) {
+
+        Course newCourse = new Course(code, title, startDate, endDate, track, family);
+        courseRepository.save(newCourse);
+        return new RedirectView("/");
+    }
+
+    @GetMapping("/myCourses")
+    public String getMyCourses() {
+        return "myCourses";
     }
 }
