@@ -42,8 +42,8 @@ public class Data {
 
         // saving each element
         for(JsonElement e : incomingArr){
-            System.out.println("***************** new object ************");
-            System.out.println(gson.fromJson(e.getAsJsonObject().get("course"), Course.class));
+//            System.out.println("***************** new object ************");
+//            System.out.println(gson.fromJson(e.getAsJsonObject().get("course"), Course.class));
             courses.add(gson.fromJson(e.getAsJsonObject().get("course"), Course.class));
         }
 
