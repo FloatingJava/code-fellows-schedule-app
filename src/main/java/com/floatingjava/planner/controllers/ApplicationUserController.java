@@ -23,13 +23,12 @@ public class ApplicationUserController {
     ApplicationUserRepository applicationUserRepository;
 
     @PostMapping("/signup")
-    public RedirectView createNewUser(String username, String password, String nameFirst, String nameLast, String dateOfBirth){
+    public RedirectView createNewUser(String username, String password, String nameFirst, String nameLast){
 
-        ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), nameFirst, nameLast, dateOfBirth);
+        ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), nameFirst, nameLast);
 
         applicationUserRepository.save(newUser);
 
-        // maybe autologin?
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
