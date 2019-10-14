@@ -21,9 +21,7 @@ header{
   font-family: Helvetica;
   box-sizing: border-box;
   background: #333;
-  position: fixed;
   width: 100%;
-  z-index: 99;
 }
 
 /* Sub Header: */
