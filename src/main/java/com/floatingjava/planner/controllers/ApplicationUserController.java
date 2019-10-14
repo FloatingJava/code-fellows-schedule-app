@@ -23,7 +23,7 @@ public class ApplicationUserController {
     ApplicationUserRepository applicationUserRepository;
 
     @PostMapping("/createAccount")
-    public RedirectView createNewUser(String username, String password, String nameFirst, String nameLast){
+    public RedirectView createNewUser(String username, String password, String nameFirst, String nameLast) {
         ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), nameFirst, nameLast);
         applicationUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
@@ -32,16 +32,17 @@ public class ApplicationUserController {
     }
 
     @GetMapping("/createAccount")
-    public String getSignUp(){
+    public String getSignUp() {
         return "createAccount";
     }
 
     @GetMapping("/login")
-    public String getLoginPage(){
+    public String getLoginPage() {
         return "login";
     }
 
     @GetMapping("/logout")
-    public RedirectView logout(){ return new RedirectView("/");
+    public RedirectView logout() {
+        return new RedirectView("/");
     }
 }
