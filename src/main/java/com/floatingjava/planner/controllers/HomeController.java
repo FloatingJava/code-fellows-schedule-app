@@ -13,7 +13,7 @@ public class HomeController {
         if(p != null){
             m.addAttribute("username", p.getName());
         }
-        return "home";
+        return "index";
     }
 
 }

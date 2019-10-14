@@ -22,23 +22,18 @@ public class ApplicationUserController {
     @Autowired
     ApplicationUserRepository applicationUserRepository;
 
-    @PostMapping("/signup")
+    @PostMapping("/createAccount")
     public RedirectView createNewUser(String username, String password, String nameFirst, String nameLast){
-
         ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), nameFirst, nameLast);
-
         applicationUserRepository.save(newUser);
-
-        // maybe autologin?
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         return new RedirectView("/");
     }
 
-    @GetMapping("/signUp")
+    @GetMapping("/createAccount")
     public String getSignUp(){
-        return "signUp";
+        return "createAccount";
     }
 
     @GetMapping("/login")
@@ -47,8 +42,6 @@ public class ApplicationUserController {
     }
 
     @GetMapping("/logout")
-    public RedirectView logout(){
-
-        return new RedirectView("/");
+    public RedirectView logout(){ return new RedirectView("/");
     }
 }
