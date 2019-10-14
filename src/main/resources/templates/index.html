@@ -13,6 +13,18 @@
       <div th:replace="fragments/common :: nav"></div>
   </header>
   <h1>Course Planner</h1>
+
+<form action="/addCourse" method="post">
+  <fieldset>
+    <input type="text" name="code">
+    <input type="text" name="title">
+    <input type="date" name="startDate">
+    <input type="date" name="endDate">
+    <input type="text" name="track">
+    <input type="text" name="family">
+    <input type="submit">
+  </fieldset>
+</form>
   
 </body>
 </html>

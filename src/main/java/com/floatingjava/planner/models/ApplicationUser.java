@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class ApplicationUser implements UserDetails {
@@ -16,6 +17,15 @@ public class ApplicationUser implements UserDetails {
     String password;
     String nameFirst;
     String nameLast;
+
+    public List<EducationalPlan> getEducationalPlanList() {
+        return educationalPlanList;
+    }
+
+    @OneToMany(mappedBy = "user")
+    List<EducationalPlan> educationalPlanList;
+
+
 
     public ApplicationUser(){}
 

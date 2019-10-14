@@ -1,7 +1,6 @@
 package com.floatingjava.planner.controllers;
 
-import com.floatingjava.planner.models.ApplicationUserRepository;
-import com.floatingjava.planner.models.ApplicationUser;
+import com.floatingjava.planner.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,24 +21,18 @@ public class ApplicationUserController {
     @Autowired
     ApplicationUserRepository applicationUserRepository;
 
-    //Watch for issues between username vs email, Nicholas walked the other group through navigating it
-
-    @PostMapping("/signup")
+    @PostMapping("/signUp")
     public RedirectView createNewUser(String username, String password, String nameFirst, String nameLast){
-
         ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), nameFirst, nameLast);
-
         applicationUserRepository.save(newUser);
-
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         return new RedirectView("/");
     }
 
     @GetMapping("/signUp")
     public String getSignUp(){
-        return "signUp";
+        return "createAccount";
     }
 
     @GetMapping("/login")
@@ -49,7 +42,22 @@ public class ApplicationUserController {
 
     @GetMapping("/logout")
     public RedirectView logout(){
-
         return new RedirectView("/");
+    }
+
+    @Autowired
+    CourseRepository courseRepository;
+
+    @PostMapping("addCourse")
+    public RedirectView addCourse(String code, String title, String startDate, String endDate, String track, String family) {
+
+        Course newCourse = new Course(code, title, startDate, endDate, track, family);
+        courseRepository.save(newCourse);
+        return new RedirectView("/");
+    }
+
+    @GetMapping("/myCourses")
+    public String getMyCourses() {
+        return "myCourses";
     }
 }
