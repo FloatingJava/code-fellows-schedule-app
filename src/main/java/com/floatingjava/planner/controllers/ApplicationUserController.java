@@ -29,7 +29,6 @@ public class ApplicationUserController {
 
         applicationUserRepository.save(newUser);
 
-        // maybe autologin?
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
