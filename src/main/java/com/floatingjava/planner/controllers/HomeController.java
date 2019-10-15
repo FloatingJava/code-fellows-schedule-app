@@ -37,7 +37,7 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        List<Course> courses = courseRepository.findAll();
+        List<Course> courses = courseRepository.findAllByOrderByStartDateAsc();
         m.addAttribute("courses",courses);
         return "index";
     }
