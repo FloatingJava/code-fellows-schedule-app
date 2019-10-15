@@ -14,18 +14,18 @@ import java.util.List;
 
 public class SavedEdPlansController {
 
-    @GetMapping("/myCourses/{edPlanId}")
-    public String getAlbumDetails(Model m, @PathVariable long edPlanId){
-        List<EducationalPlan> educationalPlans = EducationalPlanRepository.findAll();
-        m.addAttribute("edPlan", EducationalPlanRepository.getOne(edPlanId));
-        return "myCourses";
-    }
-
-    @PostMapping("/myCourses/delete")
-    public RedirectView deleteTheAlbum(long id){
-        EducationalPlanRepository.deleteById(id);
-        return new RedirectView("/myCourses");
-    }
+//    @GetMapping("/myCourses/{edPlanId}")
+//    public String getAlbumDetails(Model m, @PathVariable long edPlanId){
+//        List<EducationalPlan> educationalPlans = EducationalPlanRepository.findAll();
+//        m.addAttribute("edPlan", EducationalPlanRepository.getOne(edPlanId));
+//        return "myCourses";
+//    }
+//
+//    @PostMapping("/myCourses/delete")
+//    public RedirectView deleteTheAlbum(long id){
+//        EducationalPlanRepository.deleteById(id);
+//        return new RedirectView("/myCourses");
+//    }
 
 
 }
