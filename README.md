@@ -122,7 +122,24 @@ Escalation will involve reaching out to Boss and HR (Nicholas, Michelle, and Gin
 ### Project Organization
 
 #### Daily Team Workflow
-Day 1: Built out basic front and back end. Got SQL hooked up. Setup Accounts. Got API Data into course class.
+Day 1: 
+* Created initial Spring App
+* Created Postgresql database named planner
+    - created table named application_user;
+    - created table named course;
+    - created table named educational_plan;
+* Created routes for / which returns index
+    - This will soon utilize the course & educational_course tables
+* Created routes for /signUp which allows a user to sign up
+    - This utilizes the application_user table
+* Created routes for /login & /logout which logs user in or out
+    - This utilizes the application_user table
+* Queried and saved API data to database
+    - This utilizes the course table
+    - Converted from JSON to course class
+* Built basic HTML framework
+    - Built forms for signup & login
+* Initial deployment to heroku
 Day 2:
 Day 3: 
 Day 4: 
