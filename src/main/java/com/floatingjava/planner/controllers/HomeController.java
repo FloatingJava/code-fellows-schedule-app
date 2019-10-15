@@ -56,6 +56,11 @@ public class HomeController {
     @PostMapping("/saveEdPlan")
     public RedirectView saveEdPlan(String course101, String course102, String course201, String course301, String course401){
         //TODO: add inputs, make EdPlan from inputs, save EdPlan
+        Long course101Id = Long.parseLong(course101);
+        Long course102Id = Long.parseLong(course102);
+        Long course201Id = Long.parseLong(course201);
+        Long course301Id = Long.parseLong(course301);
+        Long course401Id = Long.parseLong(course401);
 //        educationalPlanRepository.save();
         return new RedirectView("/");
     }
