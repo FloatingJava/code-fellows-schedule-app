@@ -17,61 +17,74 @@
 
     <h1>Course Planner</h1>
 
+    <p>Choose your desired path to graduation</p>
 <!--    Reference: https://www.w3schools.com/html/html_form_elements.asp-->
-
     <form method="POST" action="/generateEdPlan">
-      <select name="EndPoint">
-          <option value="Fastest">Fastest</option>
-          <option value="Java">Java</option>
-          <option value="C#">C#</option>
-          <option value="Python">Python</option>
-          <option value="Javascript">Javascript</option>
-      </select>
+        <label for="StartPoint">Starting Class</label>
+        <select name="StartPoint" id="StartingPoint">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${#strings.startsWith(course.code, 'seattle')}">
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
 
-      <select name="StartPoint">
-          <option th:each="course : ${courses}" th:text="${course.code}" th:value="${course.id}"></option>
-      </select>
-      <input type="submit" value="Make EdPlan">
+
+        <label for="EndPoint">Path to Completion</label>
+        <select name="EndPoint" id="EndPoint">
+            <option value="Fastest">Fastest</option>
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+        </select>
+
+        <input type="submit" value="Make EdPlan">
     </form>
 
+    <p>Save your desired classes</p>
     <form method="POST" action="/saveEdPlan">
-
-        <select name="course101">
+        <label for="course101">Course 101</label>
+        <select name="course101" id="course101">
             <th:block th:each="course : ${courses}">
                 <div th:if="${course.family} == 101">
-                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
                 </div>
             </th:block>
         </select>
-
-        <select name="course102">
+        
+        <label for="course102">Course 102</label>
+        <select name="course102" id="course102">
             <th:block th:each="course : ${courses}">
                 <div th:if="${course.family} == 102">
-                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
                 </div>
             </th:block>
         </select>
-
-        <select name="course201">
+        
+        <label for="course201">Course 201</label>
+        <select name="course201" id="course201">
             <th:block th:each="course : ${courses}">
                 <div th:if="${course.family} == 201">
-                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
                 </div>
             </th:block>
         </select>
 
-        <select name="course301">
+        <label for="course301">Course 301</label>
+        <select name="course301" id="course301">
             <th:block th:each="course : ${courses}">
                 <div th:if="${course.family} == 301">
-                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
                 </div>
             </th:block>
         </select>
 
-        <select name="course401">
+        <label for="course401">Course 401</label>
+        <select name="course401" id="course401">
             <th:block th:each="course : ${courses}">
                 <div th:if="${course.family} == 'java-401' OR ${course.family} == 'javascript-401' OR ${course.family} == 'python-401' OR ${course.family} == 'dotnet-401'">
-                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
                 </div>
             </th:block>
         </select>
