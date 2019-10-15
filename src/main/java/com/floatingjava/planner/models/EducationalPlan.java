@@ -26,13 +26,7 @@ public class EducationalPlan {
     @ManyToOne
     Course course401;
 
-
-
     public String nameOfEdPlan;
-
-
-
-
 
 }
 
