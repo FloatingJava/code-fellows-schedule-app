@@ -2,6 +2,7 @@
 // https://developers.google.com/chart/interactive/docs/gallery/ganttchart
 
 
+
 // console.log('hi');
 // const requestURL = 'https://s3-us-west-2.amazonaws.com/static.codefellows.org/courses/schedule.json';
 // var request = new XMLHttpRequest();
@@ -66,6 +67,7 @@
 //     chart.draw(data, options);
 //   }
 // }
+
 
 // ******** Chart Land ***********
 google.charts.load('current', {'packages':['gantt']});
