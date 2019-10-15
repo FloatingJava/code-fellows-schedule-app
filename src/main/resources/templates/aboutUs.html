@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us</title>
+    <th:block th:replace="fragments/common :: css"></th:block>
 </head>
 
 <body>
+
+    <header>
+        <div th:replace="fragments/common :: nav"></div>
+    </header>
   
-  <section class="profiles">
+    <section class="profiles">
 
     <div class="container">
       <div class="row">
@@ -39,7 +44,7 @@
       </div>
     </div>
 
-  </section>
+    </section>
 
 </body>
 </html>

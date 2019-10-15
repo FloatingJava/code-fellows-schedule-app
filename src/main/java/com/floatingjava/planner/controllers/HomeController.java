@@ -42,6 +42,11 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/aboutUs")
+    public String getAboutUs() {
+        return "aboutUs";
+    }
+
     @PostMapping("/generateEdPlan")
     public RedirectView generateEdPlan(Model m, String startPoint, String endPoint){
         //TODO: logic to make an EdPlan, and send it to thymeleaf as a string
@@ -61,6 +66,7 @@ public class HomeController {
         Long course201Id = Long.parseLong(course201);
         Long course301Id = Long.parseLong(course301);
         Long course401Id = Long.parseLong(course401);
+        EducationalPlan educationalPlan = new EducationalPlan();
 //        educationalPlanRepository.save();
         return new RedirectView("/");
     }
