@@ -122,7 +122,7 @@ Escalation will involve reaching out to Boss and HR (Nicholas, Michelle, and Gin
 ### Project Organization
 
 #### Daily Team Workflow
-Day 1: 
+Day 1: Built out basic front and back end. Got SQL hooked up. Setup Accounts. Got API Data into course class.
 Day 2:
 Day 3: 
 Day 4: 
