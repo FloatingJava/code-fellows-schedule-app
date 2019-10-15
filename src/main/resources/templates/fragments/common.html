@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Common Pieces</title>
+
+  <th:block th:fragment="css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/layout.css" rel="stylesheet" type="text/css"/>
+    <link href="/modules.css" rel="stylesheet" type="text/css"/>
+  </th:block>
+
+</head>
+<body>
+    <section th:fragment="nav">
+        <nav sec:authorize="isAuthenticated()">
+            <a href="/">Planner</a>
+            <a href="/myCourses">My Courses</a>
+            <a href="/logout">Log Out</a>
+          </nav>
+        
+          <nav sec:authorize="isAnonymous()">
+            <h3>Log in silly hobbit</h3>
+            <a href="/">Home</a>
+            <a href="/myCourses">My Courses</a>
+            <a href="/login">Log In</a>
+            <a href="/signUp">Sign Up</a>
+          </nav>
+    </section>
+  
+</body>
+</html>
