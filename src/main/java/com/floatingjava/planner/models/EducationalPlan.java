@@ -4,9 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class EducationalPlan {
-    //This ties the family together.
-    //Need courses for 101-401
-    //    Course courseCode;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
