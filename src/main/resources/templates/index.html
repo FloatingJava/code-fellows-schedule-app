@@ -17,24 +17,65 @@
 
     <h1>Course Planner</h1>
 
-    // Reference: https://www.w3schools.com/html/html_form_elements.asp
+<!--    Reference: https://www.w3schools.com/html/html_form_elements.asp-->
 
-    <form method="POST" action="">
+    <form method="POST" action="/generateEdPlan">
       <select name="EndPoint">
-          <option value="Fastest">
-          <option value="Java">
-          <option value="C#">
-          <option value="Python">
-          <option value="Javascript">
+          <option value="Fastest">Fastest</option>
+          <option value="Java">Java</option>
+          <option value="C#">C#</option>
+          <option value="Python">Python</option>
+          <option value="Javascript">Javascript</option>
       </select>
 
       <select name="StartPoint">
-          <option value="101">
-          <option value="102">
-          <option value="201">
-          <option value="301">
-          <option value="401">
+          <option th:each="course : ${courses}" th:text="${course.code}" th:value="${course.id}"></option>
       </select>
+      <input type="submit" value="Make EdPlan">
+    </form>
+
+    <form method="POST" action="/saveEdPlan">
+
+        <select name="course101">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 101">
+                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+
+        <select name="course102">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 102">
+                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+
+        <select name="course201">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 201">
+                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+
+        <select name="course301">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 301">
+                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+
+        <select name="course401">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 'java-401' OR ${course.family} == 'javascript-401' OR ${course.family} == 'python-401' OR ${course.family} == 'dotnet-401'">
+                    <option th:text="${course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+        <input type="submit" value="Save EdPlan">
     </form>
 
   <div id="chart_div"></div>

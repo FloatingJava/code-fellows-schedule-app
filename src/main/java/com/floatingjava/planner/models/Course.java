@@ -100,4 +100,8 @@ public class Course {
                 ", course401List=" + course401List +
                 '}';
     }
+
+    public long getId() {
+        return id;
+    }
 }

@@ -42,19 +42,21 @@ public class HomeController {
         return "index";
     }
 
-//    @PostMapping("/generateEdPlan")
-//    public RedirectView generateEdPlan(Model m, String startingCourse, String chosenEdPlan){
-//        //TODO: logic to make an EdPlan, and send it to thymeleaf as a string
-//        EducationalPlan generatedEdPlan = new EducationalPlan(); // fill based on logic
-//        String edPlan = "This educational plan includes 201d50, 301d30, and Java-401d6";
-//        m.addAttribute("edPlan", edPlan);
-//        return new RedirectView("/");
-//    }
-//
-//    @PostMapping("/saveEdPlan")
-//    public RedirectView saveEdPlan(Model m){
-//        //TODO: add inputs, make EdPlan from inputs, save EdPlan
-//        educationalPlanRepository.save(generatedEdPlan);
-//        return new RedirectView("/");
-//    }
+    @PostMapping("/generateEdPlan")
+    public RedirectView generateEdPlan(Model m, String startPoint, String endPoint){
+        //TODO: logic to make an EdPlan, and send it to thymeleaf as a string
+
+        // Replace with logic!
+
+        String edPlan = "This educational plan includes 201d50, 301d30, and Java-401d6";
+        m.addAttribute("edPlan", edPlan);
+        return new RedirectView("/");
+    }
+
+    @PostMapping("/saveEdPlan")
+    public RedirectView saveEdPlan(String course101, String course102, String course201, String course301, String course401){
+        //TODO: add inputs, make EdPlan from inputs, save EdPlan
+//        educationalPlanRepository.save();
+        return new RedirectView("/");
+    }
 }
