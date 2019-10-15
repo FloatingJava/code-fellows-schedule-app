@@ -25,6 +25,25 @@ header{
   z-index: 99;
 }
 
+/* Nav Bar */
+navBar{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  font-family: Helvetica;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  z-index: 1000;
+  margin: 0;
+  background-color: #111;
+  border: none;
+  border-radius: 0;
+  min-height: 75px;
+}
+
 /* Sub Header: */
 .subHeader{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -62,4 +81,49 @@ header{
   border: none;
   margin-right: 0;
   display: block;
+}
+
+/* Drop Downs */
+dropdown{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  font-family: Gotham SSm A,Gotham SSm B;
+  cursor: pointer;
+}
+
+/* Red Buttons */
+redButtons {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  position: relative;
+  display: block;
+  line-height: 20px;
+  font-family: Gotham Rounded SSm A,Gotham Rounded SSm B;
+  background: #cc3524;
+  border: 0;
+  border-radius: 30px;
+  padding: 1em 1.5em;
+  color: #fff!important;
+  margin-left: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
