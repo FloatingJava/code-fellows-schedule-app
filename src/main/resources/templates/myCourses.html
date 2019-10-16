@@ -17,16 +17,61 @@
 
   <main>
 
-    <h1>Saved Student EdPlans</h1>
+    <h1>My Ed Plans</h1>
 
     <div>
 
-      <h4>Name of Plan - Placeholder</h4>
-
-      <ol>
-        <li>101 - date</li>
-        <li>102 - date</li>
-      </ol>
+      <th:block th:each="myPlan : ${edPlans}">
+        <h4 th:text="${'Name of Ed Plan: ' + myPlan.nameOfEdPlan}"></h4>
+        <form action="/myCourses/delete" method="post">
+          <input type="hidden" th:value="${myPlan.id}" name="planId">
+          <input type="submit" value="Delete This Plan">
+        </form>
+        <table>
+          <tr>
+            <th>Name of course</th>
+            <th>Course code</th>
+            <th>Course start date</th>
+            <th>Course end date</th>
+            <th>Course track</th>
+          </tr>
+          <tr>
+            <td th:text="${myPlan.course101.title}"></td>
+            <td th:text="${myPlan.course101.code}"></td>
+            <td th:text="${myPlan.course101.startDate}"></td>
+            <td th:text="${myPlan.course101.endDate}"></td>
+            <td th:text="${myPlan.course101.track}"></td>
+          </tr>
+          <tr>
+            <td th:text="${myPlan.course102.title}"></td>
+            <td th:text="${myPlan.course102.code}"></td>
+            <td th:text="${myPlan.course102.startDate}"></td>
+            <td th:text="${myPlan.course102.endDate}"></td>
+            <td th:text="${myPlan.course102.track}"></td>
+          </tr>
+          <tr>
+            <td th:text="${myPlan.course201.title}"></td>
+            <td th:text="${myPlan.course201.code}"></td>
+            <td th:text="${myPlan.course201.startDate}"></td>
+            <td th:text="${myPlan.course201.endDate}"></td>
+            <td th:text="${myPlan.course201.track}"></td>
+          </tr>
+          <tr>
+            <td th:text="${myPlan.course301.title}"></td>
+            <td th:text="${myPlan.course301.code}"></td>
+            <td th:text="${myPlan.course301.startDate}"></td>
+            <td th:text="${myPlan.course301.endDate}"></td>
+            <td th:text="${myPlan.course301.track}"></td>
+          </tr>
+          <tr>
+            <td th:text="${myPlan.course401.title}"></td>
+            <td th:text="${myPlan.course401.code}"></td>
+            <td th:text="${myPlan.course401.startDate}"></td>
+            <td th:text="${myPlan.course401.endDate}"></td>
+            <td th:text="${myPlan.course401.track}"></td>
+          </tr>
+        </table>
+      </th:block>
 
     </div>
 
