@@ -5,8 +5,7 @@ import com.floatingjava.planner.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,15 +46,13 @@ public class HomeController {
         return "aboutUs";
     }
 
-    @PostMapping("/generateEdPlan")
-    public RedirectView generateEdPlan(Model m, String startPoint, String endPoint){
-        //TODO: logic to make an EdPlan, and send it to thymeleaf as a string
-
-        // Replace with logic!
-
-        String edPlan = "This educational plan includes 201d50, 301d30, and Java-401d6";
-        m.addAttribute("edPlan", edPlan);
-        return new RedirectView("/");
+    @GetMapping("/generateEdPlan/{StartPoint}")
+    @ResponseBody
+    public List<Course> getCoursePath(Model m, String endPoint, @PathVariable long StartPoint) {
+        Course course = courseRepository.getOne(StartPoint);
+        String startDate = course.getStartDate();
+        List<Course> sortedCourses = courseRepository.findByStartDateGreaterThanEqual(startDate);
+        return sortedCourses;
     }
 
     @PostMapping("/saveEdPlan")

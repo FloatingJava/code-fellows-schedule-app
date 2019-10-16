@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
     public List<Course> findAllByOrderByStartDateAsc();
+    public List<Course> findByStartDateGreaterThanEqual(String startDate);
 }
