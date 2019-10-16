@@ -6,7 +6,7 @@
 * Sarah Fisher 
 
 ## Version
-1.0.0 
+1.0.2
 
 ## Problem Domain
 Our goal is to build a tool for Code Fellows prospective and current students to make course scheduling and educational planning easier.
@@ -141,6 +141,19 @@ Day 1:
     - Built forms for signup & login
 * Initial deployment to heroku
 Day 2:
+* Started CSS
+    - Generalized CSS so it should apply on all pages
+* Built out form on /index
+    - Created thymeleaf logic to render courses in appropriate sections
+    - Created SQL logic to return the course data that's after chosen course
+    - Returned object in AJAX query
+* Corrected route for app.js
+    - Moved app.js to `static` folder
+    - Included `/*.js` in WebSecurityConfig
+* Created additional routes
+    - /generateEdPlan which performs ajax call
+    - /saveEdPlan which currently does nothing
+* Created aboutus page
 Day 3: 
 Day 4: 
 Day 5: Presentation Day!
