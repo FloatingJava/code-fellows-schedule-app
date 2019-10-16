@@ -96,11 +96,6 @@ public class Course {
                 ", endDate='" + endDate + '\'' +
                 ", track='" + track + '\'' +
                 ", family='" + family + '\'' +
-                ", course101List=" + course101List +
-                ", course102List=" + course102List +
-                ", course201List=" + course201List +
-                ", course301List=" + course301List +
-                ", course401List=" + course401List +
                 '}';
     }
 
