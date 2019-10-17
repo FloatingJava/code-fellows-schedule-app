@@ -12,8 +12,9 @@
 Our goal is to build a tool for Code Fellows prospective and current students to make course scheduling and educational planning easier.
 
 ## Deployment
-https://code-fellows-planner.herokuapp.com/
+https://code-fellows-planner.herokuapp.com/  
 
+![Screen Shot](/assets/ScreenShotHomePage.png)
 ## Instructions to run the app on your computer
 Install necessary dependencies from https://start.spring.io/;
 1. GSON
@@ -185,7 +186,7 @@ Code style
 Code Fellows
 
 ## Tests
-Integration Tests for login, signup, and home page.
+Integration Tests for login, signup, and home page. Also checks API returns.
 
 
 ## Credits
