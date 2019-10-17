@@ -230,5 +230,4 @@ public class HomeController {
     public List<Course> calendarSourceList(){
         return courseRepository.findAll();
     }
->>>>>>> e4c55bdd1cb1aa5c1c477328d782d376d806f626
 }
