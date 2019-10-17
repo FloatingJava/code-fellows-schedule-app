@@ -22,15 +22,12 @@ request.onload = function() {
     calendarElement.push(course.code);
     calendarElement.push(new Date(Date.parse(course.startDate)));
     calendarElement.push(new Date(Date.parse(course.endDate)));
-    calendarElement.push(null);
-    calendarElement.push(null);
-    calendarElement.push(null);
 
     calendarArr.push(calendarElement);
   })
 
   // ******** Chart Land ***********
-  google.charts.load('current', {'packages':['gantt']});
+  google.charts.load('current', {'packages':['timeline']});
   google.charts.setOnLoadCallback(drawChart);
 
   function daysToMilliseconds(days) {
@@ -44,9 +41,6 @@ request.onload = function() {
     data.addColumn('string', 'Course Name');
     data.addColumn('date', 'Start Date');
     data.addColumn('date', 'End Date');
-    data.addColumn('number', 'Duration');
-    data.addColumn('number', 'Percent Complete');
-    data.addColumn('string', 'Dependencies');
 
     data.addRows(calendarArr);
 
@@ -57,7 +51,7 @@ request.onload = function() {
       }
     };
 
-    var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+    var chart = new google.visualization.Timeline(document.getElementById('chart_div'));
 
     chart.draw(data, options);
   }
