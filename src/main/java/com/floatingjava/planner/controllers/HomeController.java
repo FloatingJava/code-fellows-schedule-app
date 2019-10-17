@@ -204,15 +204,30 @@ public class HomeController {
 
     @PostMapping("/saveEdPlan")
     public RedirectView saveEdPlan(Principal p, String course101, String course102, String course201, String course301, String course401, String nameOfEdPlan){
-        Long course101Id = Long.parseLong(course101);
-        Course course101Course = courseRepository.getOne(course101Id);
-        Long course102Id = Long.parseLong(course102);
-        Course course102Course = courseRepository.getOne(course102Id);
-        Long course201Id = Long.parseLong(course201);
-        Course course201Course = courseRepository.getOne(course201Id);
-        Long course301Id = Long.parseLong(course301);
-        Course course301Course = courseRepository.getOne(course301Id);
-        //TODO: Rest of logic and thymeleaf logic things.
+
+        Course course101Course = null;
+        if(course101 != null){
+            Long course101Id = Long.parseLong(course101);
+            course101Course = courseRepository.getOne(course101Id);
+        }
+
+        Course course102Course = null;
+        if(course102 != null){
+            Long course102Id = Long.parseLong(course102);
+            course102Course = courseRepository.getOne(course102Id);
+        }
+
+        Course course201Course = null;
+        if(course201 != null){
+            Long course201Id = Long.parseLong(course201);
+            course201Course = courseRepository.getOne(course201Id);
+        }
+
+        Course course301Course = null;
+        if(course301 != null){
+            Long course301Id = Long.parseLong(course301);
+            course301Course = courseRepository.getOne(course301Id);
+        }
         Course course401Course = null;
         if(course401 != null) {
             Long course401Id = Long.parseLong(course401);
