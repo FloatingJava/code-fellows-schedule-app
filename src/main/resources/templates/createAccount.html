@@ -13,18 +13,36 @@
       <div th:replace="fragments/common :: nav"></div>
   </header>
   <main>
-      <form action="/signUp" method="POST">
-        <label for="username">Email</label>
-        <input name="username" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <label for="nameFirst">First Name</label>
-        <input name="nameFirst" />
-        <label for="nameLast">Last Name</label>
-        <input name="nameLast" />
-        <input type="submit" />
-        <input type="reset" />
-      </form>
+    <div class="container">
+        <form action="/signUp" method="POST">
+          <label for="username">Email</label>
+          <input name="username" placeholder="first.last@email.com"/>
+          <label for="password">Password</label>
+          <input name="password" type="password" placeholder="***********"/>
+          <label for="nameFirst">First Name</label>
+          <input name="nameFirst" placeholder="first name"/>
+          <label for="nameLast">Last Name</label>
+          <input name="nameLast" placeholder="last name"/>
+          <input id="form-button" type="submit" />
+          <input id="form-button" type="reset" />
+        </form>
+    </div>
+    <!-- <div id="login-main">
+      <div id="login">
+        <form action="/signUp" method="POST">
+          <label for="username">Email</label>
+          <input name="username" />
+          <label for="password">Password</label>
+          <input name="password" type="password" />
+          <label for="nameFirst">First Name</label>
+          <input name="nameFirst" />
+          <label for="nameLast">Last Name</label>
+          <input name="nameLast" />
+          <input type="submit" />
+          <input type="reset" />
+        </form>
+      </div>
+    </div> -->
   </main>
 </body>
 </html>
