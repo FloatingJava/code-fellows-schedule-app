@@ -12,7 +12,7 @@
 Our goal is to build a tool for Code Fellows prospective and current students to make course scheduling and educational planning easier.
 
 ## Deployment
-Heroku...
+https://code-fellows-planner.herokuapp.com/
 
 ## Instructions to run the app on your computer
 
