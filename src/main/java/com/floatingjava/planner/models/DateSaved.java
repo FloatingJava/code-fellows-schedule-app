@@ -27,8 +27,6 @@ public class DateSaved {
 
     public DateSaved() {
         this.createdAtMinutes = System.currentTimeMillis() / 1000 / 60;
-        //This stores a long with a whole fuck ton of stuff.  Maybe?
-        //save it, run it, see what happens.
     }
 
     public long getCreatedAtMinutes() {

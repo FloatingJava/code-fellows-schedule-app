@@ -38,7 +38,6 @@ function fetchCourseData(event) {
   console.log('button clicked');
   let course = $('#StartingPoint').val();
   let EndPoint = $('#EndPoint').val();
-  //  console.log(course);
 
   $.ajax({
     url: `/generateEdPlanString/${course}/${EndPoint}`,
@@ -69,37 +68,29 @@ function fetchCourseData(event) {
         dropDown101.append($('<option></option>')
           .attr('value', element.id)
           .text(element.startDate + ' - ' + element.code));
-        console.log(`${element.code} contains 101`);
       }
       if (element.family.includes('102')) {
         dropDown102.append($('<option></option>')
           .attr('value', element.id)
           .text(element.startDate + ' - ' + element.code));
-        console.log(`${element.code} contains 102`);
       }
       if (element.family.includes('201')) {
         dropDown201.append($('<option></option>')
           .attr('value', element.id)
           .text(element.startDate + ' - ' + element.code));
-        console.log(`${element.code} contains 201`);
-      } 
+      }
       if (element.family.includes('301')) {
         dropDown301.append($('<option></option>')
           .attr('value', element.id)
           .text(element.startDate + ' - ' + element.code));
-        console.log(`${element.code} contains 301`);
       }
       if (element.family.includes('401')) {
         dropDown401.append($('<option></option>')
           .attr('value', element.id)
           .text(element.startDate + ' - ' + element.code));
-        console.log(`${element.code} contains 401`);
       }
     });
-    console.log(course);
-
   });
-
 };
 
 

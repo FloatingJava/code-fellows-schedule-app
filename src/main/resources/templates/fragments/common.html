@@ -18,26 +18,27 @@
     <section th:fragment="nav">
         <nav sec:authorize="isAuthenticated()" class="navbar">
           <!-- Thanks CF <3 -->
-          <div id="nav-background"></div>
+          <div id="nav-container">
+            <div id="nav-background">Code Fellows</div>
             <ul>
               <li><a href="/">Planner</a></li>
               <li><a href="/myCourses">My Courses</a></li>
               <li><a href="/aboutUs">About Us</a></li>
               <li><a href="/logout">Log Out</a></li>
             </ul>
-            <h3>Code Planner</h3>
+          </div>
           </nav>
         
-          <nav sec:authorize="isAnonymous()">
-            <!-- Thanks CF <3 -->
-            <div id="nav-background"></div>
-            <ul>
-              <li><a href="/">Planner</a></li>
-              <li><a href="/aboutUs">About Us</a></li>
-              <li><a href="/login">Log In</a></li>
-              <li><a href="/signUp">Sign Up</a></li>
-            </ul>
-            <h3>Code Planner</h3>
+          <nav sec:authorize="isAnonymous()" class="navbar">
+            <div id="nav-container">
+              <div id="nav-background">Code Fellows</div>
+              <ul>
+                <li><a href="/">Planner</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/signUp">Sign Up</a></li>
+              </ul>
+             </div>
           </nav>
     </section>
   
