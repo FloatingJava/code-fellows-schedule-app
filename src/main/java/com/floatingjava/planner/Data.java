@@ -20,7 +20,6 @@ public class Data {
         URL getCourseUrl = new URL("https://s3-us-west-2.amazonaws.com/static.codefellows.org/courses/schedule.json");
         HttpURLConnection connection = (HttpURLConnection) getCourseUrl.openConnection();
         BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-
         // converting to buffer in to string
         StringBuilder data = new StringBuilder();
         String line = reader.readLine();
@@ -34,25 +33,19 @@ public class Data {
     public ArrayList<Course> stringParser(String incomingJSON){
         ArrayList<Course> courses = new ArrayList<>();
         Gson gson = new Gson();
-
         //converting incoming data
         JsonObject incomingObj = gson.fromJson(incomingJSON, JsonObject.class);
         JsonArray incomingArr = incomingObj.get("courses").getAsJsonArray();
-
         // saving each element
         for(JsonElement e : incomingArr){
-//            System.out.println("***************** new object ************");
-//            System.out.println(gson.fromJson(e.getAsJsonObject().get("course"), Course.class));
             courses.add(gson.fromJson(e.getAsJsonObject().get("course"), Course.class));
         }
-
         return courses;
     }
 
     public ArrayList<Course> getCourseArray() throws IOException {
         String courseStringFromJSON = getCourses();
         ArrayList<Course> courses = stringParser(courseStringFromJSON);
-
         return courses;
     }
 

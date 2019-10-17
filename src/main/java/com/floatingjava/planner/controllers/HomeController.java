@@ -36,7 +36,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String getHome(Model m){
-//        DateSaved saveDate = dateSavedRepository.save()
         long id = 1;
         //checking if date exists, if not cat will make new date
         if(dateSavedRepository.findCountOfRows() == 0){
@@ -47,9 +46,7 @@ public class HomeController {
         if(courseRepository.findCountOfRows() == 0){
             Data data = new Data();
             try {
-                // pray to the java gods
                 ArrayList<Course> arrCourse = data.getCourseArray();
-                //uncomment to save...? okay.
                 courseRepository.saveAll(arrCourse);
             } catch (IOException f) {
                 f.printStackTrace();
@@ -110,16 +107,6 @@ public class HomeController {
         }else if(EndPoint.equals("Javascript")){
             sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate301, "javascript-401", "day");
         }
-
-//        System.out.println(EndPoint);
-//        System.out.println("************************");
-//        System.out.println(sortedDay102);
-//        System.out.println("************************");
-//        System.out.println(sortedDay201);
-//        System.out.println("************************");
-//        System.out.println(sortedDay301);
-//        System.out.println("************************");
-//        System.out.println(sortedDay401);
 
         String day102 = "";
         if(sortedDay102.size() == 0){
@@ -183,16 +170,6 @@ public class HomeController {
         }else if(EndPoint.equals("Javascript")){
             sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate301, "javascript-401", "day");
         }
-
-//        System.out.println(EndPoint);
-//        System.out.println("************************");
-//        System.out.println(sortedDay102);
-//        System.out.println("************************");
-//        System.out.println(sortedDay201);
-//        System.out.println("************************");
-//        System.out.println(sortedDay301);
-//        System.out.println("************************");
-//        System.out.println(sortedDay401);
 
         List<Course> stuffToFront = sortedDay102;
         stuffToFront.addAll(sortedDay201);

@@ -47,23 +47,6 @@ header * {
   overflow: auto;
 }
 
-/* #login-main {
-  width: 60%;
-  height: 290px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#login form {
-  text-align: center;
-}
-
-#login form input {
-  margin-bottom: 15px;
-} */
-
 .container {
   font-family: Gotham SSm A,Gotham SSm B;
   font-size: 1.2em;
@@ -88,6 +71,11 @@ header * {
   font-size: 1.2em;
   margin-top: 10px;
 }
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 
 #nav-background {
   width: 175px;
@@ -95,4 +83,20 @@ header * {
   background: url("https://images.ctfassets.net/qjy3jg1udcmq/1MN5F84EVi0SaAieSkqY6S/46d632aa1811432f9c0a92600a1a5ee6/cf-logo-horizontal-2-color-white.png") 0 no-repeat;
   background-size: auto;
   background-size: contain;
+  text-indent: -5000em;
+}
+
+.navbar li {
+  width: auto;
+  padding-right: 10vw;
+}
+
+.navbar li a {
+  font-family: Gotham SSm A,Gotham SSm B;
+  font-size: 1.2em;
+}
+
+th,td {
+padding-left: 10px;
+padding-right: 10px;
 }
