@@ -12,9 +12,22 @@
 Our goal is to build a tool for Code Fellows prospective and current students to make course scheduling and educational planning easier.
 
 ## Deployment
-https://code-fellows-planner.herokuapp.com/
+https://code-fellows-planner.herokuapp.com/  
 
+![Screen Shot](/assets/ScreenShotHomePage.png)
 ## Instructions to run the app on your computer
+Install necessary dependencies from https://start.spring.io/;
+1. GSON
+2. SpringSecurity
+3. SpringSecurity5
+4. Spring Web
+5. JPA
+6. thymeleaf
+7. devtools
+8. PostGresSQL
+Set up Database environment variables (URL for macs / URL, user, password for windows and linux). If you want to run tests, then set up test environment variables also.  
+Run the main method in PlannerApplication.java  
+Go to http://localhost:8080/  
 
 
 ### Contribute
@@ -176,12 +189,8 @@ Code style
 ## API Reference
 Code Fellows
 
-## Database 
-- 
-
 ## Tests
-No tests at this time. 
-- Clearly defined API endpoints with sample responses
+Integration Tests for login, signup, and home page. Also checks API returns.
 
 
 ## Credits
