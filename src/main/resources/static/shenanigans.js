@@ -41,6 +41,14 @@ function fetchCourseData(event) {
   //  console.log(course);
 
   $.ajax({
+    url: `/generateEdPlanString/${course}/${EndPoint}`,
+    method: 'GET',
+    data: { data: course, },
+  }).then(returnString => {
+    $('#planOutPut').text(returnString);
+  })
+
+  $.ajax({
     url: `/generateEdPlan/${course}/${EndPoint}`,
     method: 'GET',
     data: { data: course, },

@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -72,7 +74,7 @@ public class HomeController {
             }
         }
 
-        List<Course> courses = courseRepository.findAllByOrderByStartDateAsc();
+        List<Course> courses = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(LocalDateTime.now().toString(), "101", "day");
         m.addAttribute("courses",courses);
         return "index";
     }
@@ -80,6 +82,79 @@ public class HomeController {
     @GetMapping("/aboutUs")
     public String getAboutUs() {
         return "aboutUs";
+    }
+
+    @GetMapping("/generateEdPlanString/{StartPoint}/{EndPoint}")
+    @ResponseBody
+    public String getCoursePathString(Model m,@PathVariable String EndPoint, @PathVariable long StartPoint) throws ParseException {
+        Course course = courseRepository.getOne(StartPoint);
+        String startDate = course.getStartDate();
+        List<Course> sortedDay102 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(startDate, "102", "day");
+
+        String endDate102 = sortedDay102.get(0).getEndDate();
+        List<Course> sortedDay201 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate102, "201", "day");
+
+        String endDate201 = sortedDay201.get(0).getEndDate();
+        List<Course> sortedDay301 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate201, "301", "day");
+
+        String endDate301 = sortedDay301.get(0).getEndDate();
+        List<Course> sortedDay401 = null;
+        if(EndPoint.equals("Fastest")){
+            sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyContainingAndTrackOrderByStartDateAsc(endDate301, "401", "day");
+        }else if(EndPoint.equals("Java")){
+            sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate301, "java-401", "day");
+        }else if(EndPoint.equals("dotnet")){
+            sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate301, "dotnet-401", "day");
+        }else if(EndPoint.equals("Python")){
+            sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate301, "python-401", "day");
+        }else if(EndPoint.equals("Javascript")){
+            sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate301, "javascript-401", "day");
+        }
+
+//        System.out.println(EndPoint);
+//        System.out.println("************************");
+//        System.out.println(sortedDay102);
+//        System.out.println("************************");
+//        System.out.println(sortedDay201);
+//        System.out.println("************************");
+//        System.out.println(sortedDay301);
+//        System.out.println("************************");
+//        System.out.println(sortedDay401);
+
+        String day102 = "";
+        if(sortedDay102.size() == 0){
+            day102 += "unavailable";
+        } else {
+            day102 += sortedDay102.get(0).getCode();
+        }
+
+        String day201 = "";
+        if(sortedDay201.size() == 0){
+            day201 += "unavailable";
+        } else {
+            day201 += sortedDay201.get(0).getCode();
+        }
+
+        String day301 = "";
+        if(sortedDay301.size() == 0){
+            day301 += "unavailable";
+        } else {
+            day301 += sortedDay301.get(0).getCode();
+        }
+
+        String day401 = "";
+        if(sortedDay401.size() == 0){
+            day401 += "unavailable";
+        } else {
+            day401 += sortedDay401.get(0).getCode();
+        }
+
+        String returnString = String.format("The 101 course is; %s. The 102 course is %s. The 201 course is %s. The 301 course is %s. This 401 course is %s",
+                course.getCode(), day102, day201, day301, day401);
+        System.out.println(returnString);
+
+
+        return returnString;
     }
 
     @GetMapping("/generateEdPlan/{StartPoint}/{EndPoint}")
@@ -169,9 +244,12 @@ public class HomeController {
         Course course201Course = courseRepository.getOne(course201Id);
         Long course301Id = Long.parseLong(course301);
         Course course301Course = courseRepository.getOne(course301Id);
-        Long course401Id = Long.parseLong(course401);
-        Course course401Course = courseRepository.getOne(course401Id);
-
+        //TODO: Rest of logic and thymeleaf logic things.
+        Course course401Course = null;
+        if(course401 != null) {
+            Long course401Id = Long.parseLong(course401);
+            course401Course = courseRepository.getOne(course401Id);
+        }
         ApplicationUser user = applicationUserRepository.findByUsername(p.getName());
 
         EducationalPlan educationalPlan = new EducationalPlan(user, course101Course, course102Course, course201Course, course301Course, course401Course, nameOfEdPlan);
