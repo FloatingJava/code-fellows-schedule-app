@@ -16,6 +16,13 @@ input[type=submit]{
   border-radius: 15px;
 }
 
+input[type=reset]{
+  background-color: #d03226;
+  border: none;
+  color: white;
+  border-radius: 15px;
+}
+
 button {
   background-color: #d03226;
   border: none;
@@ -30,4 +37,62 @@ header * {
   box-sizing: border-box;
   background: #111;
   width: 100%;
+}
+
+
+#login {
+  width: 25%;
+  padding: 20px;
+  margin: auto;
+  overflow: auto;
+}
+
+/* #login-main {
+  width: 60%;
+  height: 290px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login form {
+  text-align: center;
+}
+
+#login form input {
+  margin-bottom: 15px;
+} */
+
+.container {
+  font-family: Gotham SSm A,Gotham SSm B;
+  font-size: 1.2em;
+  padding-top: 15vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container label {
+  font-family: Gotham SSm A,Gotham SSm B;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+#form-button {
+  font-family: Gotham SSm A,Gotham SSm B;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+#nav-background {
+  width: 175px;
+  height: 40px;
+  background: url("https://images.ctfassets.net/qjy3jg1udcmq/1MN5F84EVi0SaAieSkqY6S/46d632aa1811432f9c0a92600a1a5ee6/cf-logo-horizontal-2-color-white.png") 0 no-repeat;
+  background-size: auto;
+  background-size: contain;
 }

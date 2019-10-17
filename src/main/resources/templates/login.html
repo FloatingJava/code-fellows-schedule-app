@@ -13,13 +13,15 @@
       <div th:replace="fragments/common :: nav"></div>
   </header>
   <main>
+    <div class="container">
       <form action="/login" method="POST">
         <label for="username">Username</label>
         <input name="username" />
         <label for="password">Password</label>
         <input name="password" type="password" />
-        <input type="submit" />
+        <input id="form-button" type="submit" value="login"/>
       </form>
+    </div>
   </main>
   
 </body>
