@@ -257,4 +257,10 @@ public class HomeController {
 
         return new RedirectView("/");
     }
+
+    @GetMapping("/calendarSource")
+    @ResponseBody
+    public List<Course> calendarSourceList(){
+        return courseRepository.findAll();
+    }
 }

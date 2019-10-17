@@ -1,69 +1,67 @@
 // Gantt Chart source;
 // https://developers.google.com/chart/interactive/docs/gallery/ganttchart
 
-
-
-// console.log('hi');
-
-// //Getting JSON 
+//Getting JSON 
 // const requestURL = 'https://s3-us-west-2.amazonaws.com/static.codefellows.org/courses/schedule.json';
-// var request = new XMLHttpRequest();
-// request.open('Get', requestURL);
-// requestURL.responseType = 'json';
-// request.send();
-// request.onload = function() {
+const requestURL = '/calendarSource'
+var request = new XMLHttpRequest();
+request.open('Get', requestURL);
+requestURL.responseType = 'json';
+request.send();
+request.onload = function() {
+  //Parsing JSON 
+  const courseJSONstr = request.response;
+  const courseJSONarr = JSON.parse(courseJSONstr);
+  let calendarArr = [];
 
-//   //Parsing JSON 
-//   const courseJSONstr = request.response;
-//   const courseJSONobj = JSON.parse(courseJSONstr);
-//   let courseArr = [];
-//   let calendarArr = [];
-//   courseArr = courseJSONobj.courses
-//   courseArr.forEach(course => {
-//     calendarElement = [];
+  courseJSONarr.forEach(course => {
+    calendarElement = [];
 
-//     //Converting data types
-//     calendarElement.push(course.course.code);
-//     calendarElement.push(course.course.code);
-//     calendarElement.push(new Date(Date.parse(course.course.startDate)));
-//     calendarElement.push(new Date(Date.parse(course.course.endDate)));
-//     calendarElement.push(null);
-//     calendarElement.push(null);
-//     calendarElement.push(null);
+    //Converting data types
+    calendarElement.push(course.code);
+    calendarElement.push(course.code);
+    calendarElement.push(new Date(Date.parse(course.startDate)));
+    calendarElement.push(new Date(Date.parse(course.endDate)));
+    calendarElement.push(null);
+    calendarElement.push(null);
+    calendarElement.push(null);
 
-//     calendarArr.push(calendarElement);
-//   })
+    calendarArr.push(calendarElement);
+  })
 
-//   // ******** Chart Land ***********
-//   google.charts.load('current', {'packages':['gantt']});
-//   google.charts.setOnLoadCallback(drawChart);
+  // ******** Chart Land ***********
+  google.charts.load('current', {'packages':['gantt']});
+  google.charts.setOnLoadCallback(drawChart);
 
-//   function daysToMilliseconds(days) {
-//     return days * 24 * 60 * 60 * 1000;
-//   }
+  function daysToMilliseconds(days) {
+    return days * 24 * 60 * 60 * 1000;
+  }
 
-//   function drawChart() {
+  function drawChart() {
 
-//     var data = new google.visualization.DataTable();
-//     data.addColumn('string', 'Course ID');
-//     data.addColumn('string', 'Course Name');
-//     data.addColumn('date', 'Start Date');
-//     data.addColumn('date', 'End Date');
-//     data.addColumn('number', 'Duration');
-//     data.addColumn('number', 'Percent Complete');
-//     data.addColumn('string', 'Dependencies');
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Course ID');
+    data.addColumn('string', 'Course Name');
+    data.addColumn('date', 'Start Date');
+    data.addColumn('date', 'End Date');
+    data.addColumn('number', 'Duration');
+    data.addColumn('number', 'Percent Complete');
+    data.addColumn('string', 'Dependencies');
 
-//     data.addRows(calendarArr);
+    data.addRows(calendarArr);
 
-//     var options = {
-//       height: 2000,
-//     };
+    var options = {
+      height: 2000,
+      gantt: {
+        percentEnabled: false
+      }
+    };
 
-//     var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+    var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
 
-//     chart.draw(data, options);
-//   }
-// }
+    chart.draw(data, options);
+  }
+}
 
 
 // // ******** Chart Land Original ***********
