@@ -194,38 +194,6 @@ public class HomeController {
 //        System.out.println("************************");
 //        System.out.println(sortedDay401);
 
-        String day102 = "";
-        if(sortedDay102.size() == 0){
-            day102 += "unavailable";
-        } else {
-            day102 += sortedDay102.get(0).getCode();
-        }
-
-        String day201 = "";
-        if(sortedDay201.size() == 0){
-            day201 += "unavailable";
-        } else {
-            day201 += sortedDay201.get(0).getCode();
-        }
-
-        String day301 = "";
-        if(sortedDay301.size() == 0){
-            day301 += "unavailable";
-        } else {
-            day301 += sortedDay301.get(0).getCode();
-        }
-
-        String day401 = "";
-        if(sortedDay401.size() == 0){
-            day401 += "unavailable";
-        } else {
-            day401 += sortedDay401.get(0).getCode();
-        }
-
-        String returnString = String.format("The 101 course is; %s. The 102 course is %s. The 201 course is %s. The 301 course is %s. This 401 course is %s",
-                course.getCode(), day102, day201, day301, day401);
-        System.out.println(returnString);
-
         List<Course> stuffToFront = sortedDay102;
         stuffToFront.addAll(sortedDay201);
         stuffToFront.addAll(sortedDay301);
