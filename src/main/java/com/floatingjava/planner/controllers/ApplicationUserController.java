@@ -45,19 +45,4 @@ public class ApplicationUserController {
         return new RedirectView("/");
     }
 
-    @Autowired
-    CourseRepository courseRepository;
-
-    @PostMapping("addCourse")
-    public RedirectView addCourse(String code, String title, String startDate, String endDate, String track, String family) {
-
-        Course newCourse = new Course(code, title, startDate, endDate, track, family);
-        courseRepository.save(newCourse);
-        return new RedirectView("/");
-    }
-
-    @GetMapping("/myCourses")
-    public String getMyCourses() {
-        return "myCourses";
-    }
 }

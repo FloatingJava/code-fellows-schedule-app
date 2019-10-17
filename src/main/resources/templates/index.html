@@ -36,14 +36,14 @@
         <select name="EndPoint" id="EndPoint">
             <option value="Fastest">Fastest</option>
             <option value="Java">Java</option>
-            <option value="C#">C#</option>
+            <option value="dotnet">C#</option>
             <option value="Python">Python</option>
             <option value="Javascript">Javascript</option>
         </select>
             <button>Create Ed Plan</button>
     </form>
 
-    <p>Save your desired classes</p>
+    <p id="planOutPut">Save your desired classes</p>
     <form method="POST" action="/saveEdPlan">
         <label for="course101">Course 101</label>
         <select name="course101" id="course101">
@@ -89,6 +89,9 @@
                 </div>
             </th:block>
         </select>
+        <!--TODO:  Make save button hides if user is not logged in -->
+        <label for="nameOfEdPlan">Name your ed plan</label>
+        <input type="text" name="nameOfEdPlan" required id="nameOfEdPlan">
         <input type="submit" value="Save EdPlan">
     </form>
 

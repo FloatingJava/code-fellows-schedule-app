@@ -12,7 +12,7 @@ public class EducationalPlan {
     @ManyToOne
     ApplicationUser user;
 
-    @ManyToOne
+    @ManyToOne()
     Course course101;
     @ManyToOne
     Course course102;
@@ -27,8 +27,7 @@ public class EducationalPlan {
 
     public EducationalPlan() {};
 
-    public EducationalPlan(Long id, ApplicationUser user, Course course101, Course course102, Course course201, Course course301, Course course401, String nameOfEdPlan) {
-        this.id = id;
+    public EducationalPlan(ApplicationUser user, Course course101, Course course102, Course course201, Course course301, Course course401, String nameOfEdPlan) {
         this.user = user;
         this.course101 = course101;
         this.course102 = course102;
@@ -100,6 +99,20 @@ public class EducationalPlan {
 
     public void setNameOfEdPlan(String nameOfEdPlan) {
         this.nameOfEdPlan = nameOfEdPlan;
+    }
+
+    @Override
+    public String toString() {
+        return "EducationalPlan{" +
+                "id=" + id +
+                ", user=" + user +
+                ", course101=" + course101 +
+                ", course102=" + course102 +
+                ", course201=" + course201 +
+                ", course301=" + course301 +
+                ", course401=" + course401 +
+                ", nameOfEdPlan='" + nameOfEdPlan + '\'' +
+                '}';
     }
 }
 
