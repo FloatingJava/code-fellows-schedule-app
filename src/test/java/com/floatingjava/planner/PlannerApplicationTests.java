@@ -54,4 +54,18 @@ public class PlannerApplicationTests {
 				.andExpect(status().is(200))
 				.andExpect(content().string(containsString("<form action=\"/signUp\" method=\"POST\">")));
 	}
+
+	@Test
+	public void testGetCalendarSourceIsOkAndContainsStuff() throws Exception{
+		this.mockMvc.perform(get("/calendarSource")).andDo(print())
+				.andExpect(status().is(200))
+				.andExpect(content().string(containsString("endDate\":\"2020-01-24\",\"track\":\"day\",\"family\":\"102\"},{\"id\":65,\"code\":\"seattle-102d10\",\"title\":\"Code 102: Intro to Software Development\",\"startDate\":\"2020-02-17\",\"endDate\":\"2020-02-21\",\"track\":\"day\",\"family\":\"102\"},{\"id\":66,\"code\":\"kexp-101d4\",\"title\":\"Code 101: Explore Software ")));
+	}
+
+	@Test
+	public void testGetGenerateEdPlanIsOkAndContainsStuff() throws Exception{
+		this.mockMvc.perform(get("/generateEdPlan/31/Fastest")).andDo(print())
+				.andExpect(status().is(200))
+				.andExpect(content().string(containsString("Development\",\"startDate\":\"2020-03-09\",\"endDate\":\"2020-04-03\",\"track\":\"day\",\"family\":\"301\"},{\"id\":40,\"code\":\"seattle-301d61\",\"title\":\"Code 301: Intermediate Software ")));
+	}
 }
