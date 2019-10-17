@@ -1,30 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Planner</title>
-  <th:block th:replace="fragments/common :: css"></th:block>
 
-</head>
-<body>
-  <header>
-      <div th:replace="fragments/common :: nav"></div>
-  </header>
-  <h1>Course Planner</h1>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Planner</title>
+    <th:block th:replace="fragments/common :: css"></th:block>
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+  </head>
 
-<form action="/addCourse" method="post">
-  <fieldset>
-    <input type="text" name="code">
-    <input type="text" name="title">
-    <input type="date" name="startDate">
-    <input type="date" name="endDate">
-    <input type="text" name="track">
-    <input type="text" name="family">
-    <input type="submit">
-  </fieldset>
-</form>
-  
-</body>
+  <body>
+
+    <header>
+        <div th:replace="fragments/common :: nav"></div>
+    </header>
+
+    <h1>Course Planner</h1>
+
+    <p>Choose your desired path to graduation</p>
+<!--    Reference: https://www.w3schools.com/html/html_form_elements.asp-->
+    <form id="search-form">
+        <label for="StartPoint">Starting Class</label>
+        <select name="StartPoint" id="StartingPoint">
+            <th:block th:each="course : ${courses}">
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}" th:id="StartPoint"></option>
+            </th:block>
+        </select>
+
+
+        <label for="EndPoint">Path to Completion</label>
+        <select name="EndPoint" id="EndPoint">
+            <option value="Fastest">Fastest</option>
+            <option value="Java">Java</option>
+            <option value="dotnet">C#</option>
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+        </select>
+            <button>Create Ed Plan</button>
+    </form>
+
+    <p id="planOutPut">Save your desired classes</p>
+    <form method="POST" action="/saveEdPlan">
+        <label for="course101">Course 101</label>
+        <select name="course101" id="course101">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 101">
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+        
+        <label for="course102">Course 102</label>
+        <select name="course102" id="course102">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 102">
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+        
+        <label for="course201">Course 201</label>
+        <select name="course201" id="course201">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 201">
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+
+        <label for="course301">Course 301</label>
+        <select name="course301" id="course301">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 301">
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+
+        <label for="course401">Course 401</label>
+        <select name="course401" id="course401">
+            <th:block th:each="course : ${courses}">
+                <div th:if="${course.family} == 'java-401' OR ${course.family} == 'javascript-401' OR ${course.family} == 'python-401' OR ${course.family} == 'dotnet-401'">
+                    <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
+                </div>
+            </th:block>
+        </select>
+        <!--TODO:  Make save button hides if user is not logged in -->
+        <label for="nameOfEdPlan">Name your ed plan</label>
+        <input type="text" name="nameOfEdPlan" required id="nameOfEdPlan">
+        <input type="submit" value="Save EdPlan">
+    </form>
+
+  <div id="chart_div"></div>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="/app.js"></script>
+    <script src="/shenanigans.js"></script>
+  </body>
 </html>

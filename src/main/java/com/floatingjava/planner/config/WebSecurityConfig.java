@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .cors().disable()
                     .csrf().disable()
                     .authorizeRequests()
-                    .antMatchers("/", "/login", "/signUp", "/*.css").permitAll()
+                    .antMatchers("/", "/login", "/signUp","/aboutUs", "/*.css", "/*.js", "/generateEdPlan/*/*", "/generateEdPlanString/*/*", "/aboutUs", "/photos/*.jpg", "/calendarSource").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
@@ -53,4 +53,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
+>>>>>>> e4c55bdd1cb1aa5c1c477328d782d376d806f626
 }

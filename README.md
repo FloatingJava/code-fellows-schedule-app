@@ -6,13 +6,13 @@
 * Sarah Fisher 
 
 ## Version
-1.0.0 
+1.0.2
 
 ## Problem Domain
 Our goal is to build a tool for Code Fellows prospective and current students to make course scheduling and educational planning easier.
 
 ## Deployment
-Heroku...
+https://code-fellows-planner.herokuapp.com/
 
 ## Instructions to run the app on your computer
 
@@ -122,9 +122,51 @@ Escalation will involve reaching out to Boss and HR (Nicholas, Michelle, and Gin
 ### Project Organization
 
 #### Daily Team Workflow
+<<<<<<< HEAD
 Day 1: Built out basic front and back end. Got SQL hooked up. Setup Accounts. Got API Data into course class.
+=======
+Day 1: 
+* Created initial Spring App
+* Created Postgresql database named planner
+    - created table named application_user;
+    - created table named course;
+    - created table named educational_plan;
+* Created routes for / which returns index
+    - This will soon utilize the course & educational_course tables
+* Created routes for /signUp which allows a user to sign up
+    - This utilizes the application_user table
+* Created routes for /login & /logout which logs user in or out
+    - This utilizes the application_user table
+* Queried and saved API data to database
+    - This utilizes the course table
+    - Converted from JSON to course class
+* Built basic HTML framework
+    - Built forms for signup & login
+* Initial deployment to heroku
+>>>>>>> e4c55bdd1cb1aa5c1c477328d782d376d806f626
 Day 2:
+* Started CSS
+    - Generalized CSS so it should apply on all pages
+* Built out form on /index
+    - Created thymeleaf logic to render courses in appropriate sections
+    - Created SQL logic to return the course data that's after chosen course
+    - Returned object in AJAX query
+* Corrected route for app.js
+    - Moved app.js to `static` folder
+    - Included `/*.js` in WebSecurityConfig
+* Created additional routes
+    - /generateEdPlan which performs ajax call
+    - /saveEdPlan which currently does nothing
+* Created aboutus page
 Day 3: 
+* Saved course per user
+    - User is able to view individual courses and delete them
+    - viewable on `/myCourses` route
+* Created logic to save courses to DB based on user
+* Performed a ton of logic
+    - Able to sort courses by Course
+    - Able to sort courses by Fastest track
+* Started about us page
 Day 4: 
 Day 5: Presentation Day!
 

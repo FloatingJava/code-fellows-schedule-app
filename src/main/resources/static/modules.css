@@ -1,65 +1,33 @@
-
+a {
+  color: #d03226;
+}
 body{
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  box-sizing: border-box;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
   font-size: 14px;
-  line-height: 1.428571429;
   color: #333;
   background-color: #fff;
   font-family: Helvetica;
 }
 
-/* Header Container: */
-header{
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-font-smoothing: antialiased;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-  font-family: Helvetica;
-  box-sizing: border-box;
-  background: #333;
-  width: 100%;
-  z-index: 99;
-}
-
-/* Sub Header: */
-.subHeader{
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-font-smoothing: antialiased;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-  font-family: Helvetica;
-  box-sizing: border-box;
-  display: block;
-  margin-bottom: 0;
-  padding: 0;
-  background: #e0ddd1;
-}
-
-/* Hamburger: */
-#hamburger {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  text-transform: none;
-  cursor: pointer;
-  -webkit-appearance: button;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  position: relative;
-  float: right;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background: #cf3127;
-  border-radius: 0;
+input[type=submit]{
+  background-color: #d03226;
   border: none;
-  margin-right: 0;
-  display: block;
+  color: white;
+  border-radius: 15px;
+}
+
+button {
+  background-color: #d03226;
+  border: none;
+  color: white;
+  border-radius: 15px;
+}
+
+/* Header Container: */
+header * {
+  color:white;
+  font-family: Helvetica;
+  box-sizing: border-box;
+  background: #111;
+  width: 100%;
 }
