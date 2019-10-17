@@ -1,12 +1,12 @@
 package com.floatingjava.planner.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "course101List", "course102List", "course201List", "course301List", "course401List"})
+
 public class Course {
 
     @Id
@@ -102,4 +102,5 @@ public class Course {
     public long getId() {
         return id;
     }
+
 }

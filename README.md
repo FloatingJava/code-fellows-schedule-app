@@ -135,7 +135,10 @@ Escalation will involve reaching out to Boss and HR (Nicholas, Michelle, and Gin
 ### Project Organization
 
 #### Daily Team Workflow
-Day 1: 
+<<<<<<< HEAD
+Day 1: Built out basic front and back end. Got SQL hooked up. Setup Accounts. Got API Data into course class.
+=======
+### Day 1: 
 * Created initial Spring App
 * Created Postgresql database named planner
     - created table named application_user;
@@ -153,7 +156,8 @@ Day 1:
 * Built basic HTML framework
     - Built forms for signup & login
 * Initial deployment to heroku
-Day 2:
+
+### Day 2:
 * Started CSS
     - Generalized CSS so it should apply on all pages
 * Built out form on /index
@@ -167,7 +171,8 @@ Day 2:
     - /generateEdPlan which performs ajax call
     - /saveEdPlan which currently does nothing
 * Created aboutus page
-Day 3: 
+
+### Day 3: 
 * Saved course per user
     - User is able to view individual courses and delete them
     - viewable on `/myCourses` route
@@ -176,18 +181,30 @@ Day 3:
     - Able to sort courses by Course
     - Able to sort courses by Fastest track
 * Started about us page
-Day 4: 
-Day 5: Presentation Day!
+
+### Day 4: 
+* Finished Logic with Forms
+    - Resolved saving nullable data into SQL and nullable data in Thymeleaf
+* Fixed Heroku deployment
+* Fixed Gantt calendar logic
+    - Calendar now loads course data from database
+* Created integration tests
+    - Login, signup, index
+    - API tests 
+* Finished CSS
+* Finished presentation
+* Prepared and practiced demo presentation
+
+### Day 5: Presentation Day!
 
 ## Code style
-Code style 
+Java, JavaScript, HTML, CSS, Spring, JPA 
 
 ## API Reference
 Code Fellows
 
 ## Tests
 Integration Tests for login, signup, and home page. Also checks API returns.
-
 
 ## Credits
 * Java 401 Instructional Team

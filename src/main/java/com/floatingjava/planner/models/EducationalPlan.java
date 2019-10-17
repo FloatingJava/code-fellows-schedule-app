@@ -114,5 +114,6 @@ public class EducationalPlan {
                 ", nameOfEdPlan='" + nameOfEdPlan + '\'' +
                 '}';
     }
+
 }
 

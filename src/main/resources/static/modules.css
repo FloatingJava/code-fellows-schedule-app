@@ -71,6 +71,7 @@ header * {
   font-size: 1.2em;
   margin-top: 10px;
 }
+
 ul {
   display: flex;
   flex-direction: row;
