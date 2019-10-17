@@ -155,6 +155,14 @@ Day 2:
     - /saveEdPlan which currently does nothing
 * Created aboutus page
 Day 3: 
+* Saved course per user
+    - User is able to view individual courses and delete them
+    - viewable on `/myCourses` route
+* Created logic to save courses to DB based on user
+* Performed a ton of logic
+    - Able to sort courses by Course
+    - Able to sort courses by Fastest track
+* Started about us page
 Day 4: 
 Day 5: Presentation Day!
 

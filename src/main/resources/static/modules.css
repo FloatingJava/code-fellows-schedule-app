@@ -16,6 +16,13 @@ input[type=submit]{
   border-radius: 15px;
 }
 
+button {
+  background-color: #d03226;
+  border: none;
+  color: white;
+  border-radius: 15px;
+}
+
 /* Header Container: */
 header * {
   color:white;
