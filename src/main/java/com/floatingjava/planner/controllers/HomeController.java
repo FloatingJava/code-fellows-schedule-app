@@ -53,6 +53,7 @@ public class HomeController {
             }
         }
 
+        // Needs to be rewritten to find new classes and add them to the database instead of deleting and rewritting.
         DateSaved oldDate = dateSavedRepository.getOne(id);
         if ((System.currentTimeMillis() / 1000 / 60) > (oldDate.createdAtMinutes() + (long)(60 * 24))) {
             //updating created at in sql
@@ -108,6 +109,8 @@ public class HomeController {
             sortedDay401 = courseRepository.findByStartDateGreaterThanEqualAndFamilyAndTrackOrderByStartDateAsc(endDate301, "javascript-401", "day");
         }
 
+        // Change unavailable to not yet scheduled
+
         String day102 = "";
         if(sortedDay102.size() == 0){
             day102 += "unavailable";
@@ -138,8 +141,6 @@ public class HomeController {
 
         String returnString = String.format("The 101 course is; %s. The 102 course is %s. The 201 course is %s. The 301 course is %s. This 401 course is %s",
                 course.getCode(), day102, day201, day301, day401);
-        System.out.println(returnString);
-
 
         return returnString;
     }
@@ -215,9 +216,11 @@ public class HomeController {
         EducationalPlan educationalPlan = new EducationalPlan(user, course101Course, course102Course, course201Course, course301Course, course401Course, nameOfEdPlan);
         educationalPlanRepository.save(educationalPlan);
 
-        return new RedirectView("/");
+        // Changed to RedirectView to myCourses when saving an ed plan
+        return new RedirectView("/myCourses");
     }
 
+    // Once we are adding new classes instead of overwriting we will need to sort this by availability and then make it responsive to the user's selection before saving
     @GetMapping("/calendarSource")
     @ResponseBody
     public List<Course> calendarSourceList(){

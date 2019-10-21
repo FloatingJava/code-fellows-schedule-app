@@ -10,7 +10,8 @@ import java.text.SimpleDateFormat;
 @Entity
 public class DateSaved {
 
-
+    // Creates a timestamp for when the API was last downloaded to the database
+    //createdAt tracks down to the minute, not seconds or milliseconds
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;

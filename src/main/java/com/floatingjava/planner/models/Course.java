@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.List;
 
+// Needs to be adjusted to add any new classes from the API not currently in the database
+
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "course101List", "course102List", "course201List", "course301List", "course401List"})
 public class Course {
@@ -50,8 +52,7 @@ public class Course {
         return course401List;
     }
 
-    public Course() {
-    }
+    public Course() {}
 
     public Course (String code, String title, String startDate, String endDate, String track, String family) {
         this.code = code;
@@ -66,9 +67,8 @@ public class Course {
         return code;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    // Does not seem to be used but site breaks when deleted
+    public String getTitle() { return title; }
 
     public String getStartDate() {
         return startDate;
@@ -78,13 +78,11 @@ public class Course {
         return endDate;
     }
 
-    public String getTrack() {
-        return track;
-    }
+    // Does not seem to be used but site breaks when deleted
+    public String getTrack() { return track; }
 
-    public String getFamily() {
-        return family;
-    }
+    // Does not seem to be used but site breaks when deleted
+    public String getFamily() { return family; }
 
     @Override
     public String toString() {
