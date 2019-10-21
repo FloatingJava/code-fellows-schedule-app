@@ -1,28 +1,3 @@
-// 'use strict';
-
-// $(() => {
-//   setEventListeners();
-// });
-
-// function setEventListeners() {
-//   $('#search-form').on('submit', fetchCourseData);
-// };
-
-// function fetchCourseData(event) {
-//   event.preventDefault();
-//   console.log('button clicked');
-//   let course = $('#StartingPoint').val();
-//   console.log(course);
-
-//   $.ajax({
-//     url: `/generateEdPlan/${course}`,
-//     method: 'GET',
-//     data: { data: course, },
-//   }).then(course =>
-//     console.log(course)
-//   );
-// };
-
 'use strict';
 
 $(() => {
@@ -32,6 +7,38 @@ $(() => {
 function setEventListeners() {
   $('#search-form').on('submit', fetchCourseData);
 };
+
+$('#course101').on('change', function(){
+  fetchCalendarData('101');
+});
+$('#course102').on('change', function(){
+  fetchCalendarData('102');
+});
+$('#course201').on('change', function(){
+  fetchCalendarData('201');
+});
+$('#course301').on('change', function(){
+  fetchCalendarData('301');
+});
+$('#course401').on('change', function(){
+  fetchCalendarData('401');
+});
+
+function fetchCalendarData(course){
+  var course101 = $('#course101').val();
+  var course102 = $('#course102').val();
+  var course201 = $('#course201').val();
+  var course301 = $('#course301').val();
+  var course401 = $('#course401').val();
+  if (course === '101'){ console.log(`Course 101's value is ${course101}`); }
+  if (course === '102'){ console.log(`Course 102's value is ${course102}`); }
+  if (course === '201'){ console.log(`Course 201's value is ${course201}`); }
+  if (course === '301'){ console.log(`Course 301's value is ${course301}`); }
+  if (course === '401'){ console.log(`Course 401's value is ${course401}`); }
+  // event.preventDefault();
+  // console.log(this.val());
+  // console.log(course + ' was clicked on');
+}
 
 function fetchCourseData(event) {
   event.preventDefault();
