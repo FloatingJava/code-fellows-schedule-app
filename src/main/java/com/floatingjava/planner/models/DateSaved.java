@@ -10,6 +10,10 @@ import java.text.SimpleDateFormat;
 @Entity
 public class DateSaved {
 
+    //Stretch goal:  Have valid cache validation.
+    //Issues we ran into that foreign key constraints if a user has a course saved, we can't drop the table.\
+    //Do logic if no one has courses... or something... then we can delete.
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

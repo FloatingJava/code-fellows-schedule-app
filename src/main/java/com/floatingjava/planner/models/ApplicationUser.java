@@ -37,6 +37,7 @@ public class ApplicationUser implements UserDetails {
         this.nameLast = nameLast;
     }
 
+    //This is for the user groups
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

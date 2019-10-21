@@ -14,6 +14,7 @@ public class Course {
     long id;
     private String code;
     private String title;
+    //This is never converted into a date object.
     private String startDate;
     private String endDate;
     private String track;

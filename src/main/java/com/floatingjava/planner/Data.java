@@ -36,12 +36,14 @@ public class Data {
         JsonObject incomingObj = gson.fromJson(incomingJSON, JsonObject.class);
         JsonArray incomingArr = incomingObj.get("courses").getAsJsonArray();
         // saving each element
+        //for each course within our courses, we add this to our courses above.
         for(JsonElement e : incomingArr){
             courses.add(gson.fromJson(e.getAsJsonObject().get("course"), Course.class));
         }
         return courses;
     }
 
+    //This just returns the courses created by stringParser
     public ArrayList<Course> getCourseArray() throws IOException {
         String courseStringFromJSON = getCourses();
         ArrayList<Course> courses = stringParser(courseStringFromJSON);

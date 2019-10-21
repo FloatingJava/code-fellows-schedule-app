@@ -27,6 +27,8 @@
         <label for="StartPoint">Starting Class</label>
         <select name="StartPoint" id="StartingPoint">
             <th:block th:each="course : ${courses}">
+                <!-- For each course, set the title and value. -->
+                <!-- Title : 10/21/2019 - Java401d6 and the value's ID is 4-->
                     <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}" th:id="StartPoint"></option>
             </th:block>
         </select>
@@ -84,6 +86,7 @@
         <label for="course401">Course 401</label>
         <select name="course401" id="course401">
             <th:block th:each="course : ${courses}">
+                <!--enum? -->
                 <div th:if="${course.family} == 'java-401' OR ${course.family} == 'javascript-401' OR ${course.family} == 'python-401' OR ${course.family} == 'dotnet-401'">
                     <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}"></option>
                 </div>
