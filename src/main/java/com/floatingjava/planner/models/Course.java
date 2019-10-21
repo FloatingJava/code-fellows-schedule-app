@@ -30,6 +30,7 @@ public class Course {
     @OneToMany(mappedBy = "course401")
     List<EducationalPlan> course401List;
 
+    //TODO build out tool for admin people at code fellows to see course interest
     public List<EducationalPlan> getCourse101List() {
         return course101List;
     }

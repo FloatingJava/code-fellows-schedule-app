@@ -37,6 +37,7 @@ public class HomeController {
     public String getHome(Model m){
         long id = 1;
         //checking if date exists, if not cat will make new date
+        //TODO: Not actually working yet.
         if(dateSavedRepository.findCountOfRows() == 0){
             DateSaved newDate = new DateSaved();
             dateSavedRepository.save(newDate);
@@ -53,6 +54,7 @@ public class HomeController {
         }
 
         DateSaved oldDate = dateSavedRepository.getOne(id);
+        //TODO: depends on date storage which doesn't work.
         if ((System.currentTimeMillis() / 1000 / 60) > (oldDate.createdAtMinutes() + (long)(60 * 24))) {
             //updating created at in sql
             oldDate.setCreatedAtMinutes();
@@ -175,6 +177,7 @@ public class HomeController {
         stuffToFront.addAll(sortedDay301);
         stuffToFront.addAll(sortedDay401);
         stuffToFront.add(course);
+        //TODO: reutrn this and the string together in a list of objects.
         return stuffToFront;
     }
 

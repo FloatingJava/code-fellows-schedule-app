@@ -33,6 +33,8 @@ public class SavedEdPlansController {
         return "myCourses";
     }
 
+    //TODO detailed view of an ed plan, not done yet.
+    //TODO add chart view for each ed plan
     @GetMapping("/myCourses/{edPlanId}")
     public String getSavedEdPlanDetails(Model m, @PathVariable long edPlanId) {
         m.addAttribute("edPlan", educationalPlanRepository.getOne(edPlanId));

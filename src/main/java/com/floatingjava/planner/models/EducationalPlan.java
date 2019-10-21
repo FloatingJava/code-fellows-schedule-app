@@ -12,6 +12,7 @@ public class EducationalPlan {
     @ManyToOne
     ApplicationUser user;
 
+    //TODO could this be a many to many?
     @ManyToOne()
     Course course101;
     @ManyToOne
