@@ -40,9 +40,6 @@ public class ApplicationUserController {
         return "login";
     }
 
-    @GetMapping("/logout")
-    public RedirectView logout(){
-        return new RedirectView("/");
-    }
+    // This is handled by the WebSecurityConfig, so this route is irrelevant.
 
 }

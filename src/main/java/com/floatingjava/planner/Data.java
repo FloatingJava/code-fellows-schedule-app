@@ -15,6 +15,11 @@ import java.util.ArrayList;
 
 public class Data {
 
+    // Minor optimization would be to make these static methods so you don't have to
+    // create a new Data() in other classes. But this is fine.
+
+    // Major optimization would be to let GSON handle the reader, instead of reading it
+    // manually to a String!
     public String getCourses() throws IOException {
         // reading from the web
         URL getCourseUrl = new URL("https://s3-us-west-2.amazonaws.com/static.codefellows.org/courses/schedule.json");

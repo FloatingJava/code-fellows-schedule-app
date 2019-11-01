@@ -37,21 +37,15 @@ function fetchCourseData(event) {
   event.preventDefault();
   console.log('button clicked');
   let course = $('#StartingPoint').val();
-  let EndPoint = $('#EndPoint').val();
+  let endPoint = $('#EndPoint').val();
 
   $.ajax({
-    url: `/generateEdPlanString/${course}/${EndPoint}`,
+    url: `/generateEdPlan/${course}/${endPoint}`,
+    // I don't think you're using this data in either request!
     method: 'GET',
-    data: { data: course, },
-  }).then(returnString => {
-    $('#planOutPut').text(returnString);
-  })
-
-  $.ajax({
-    url: `/generateEdPlan/${course}/${EndPoint}`,
-    method: 'GET',
-    data: { data: course, },
-  }).then(course => {
+  }).then(response => {
+    $('#planOutPut').text(response.coursesString);
+    const course = response.courses;
     let dropDown101 = $('#course101');
     dropDown101.empty();
     let dropDown102 = $('#course102');
