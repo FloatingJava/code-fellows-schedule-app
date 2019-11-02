@@ -12,7 +12,7 @@ public class EducationalPlan {
     @ManyToOne
     ApplicationUser user;
 
-    @ManyToOne()
+    @ManyToOne
     Course course101;
     @ManyToOne
     Course course102;

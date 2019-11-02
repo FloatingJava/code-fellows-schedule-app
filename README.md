@@ -25,8 +25,12 @@ Install necessary dependencies from https://start.spring.io/;
 6. thymeleaf
 7. devtools
 8. PostGresSQL
-Set up Database environment variables (URL for macs / URL, user, password for windows and linux). If you want to run tests, then set up test environment variables also.  
-Run the main method in PlannerApplication.java  
+
+<!-- Missing the application.properties file, so I also had to create one of those. That file doesn't need to be gitignored! -->
+Set up Database environment variables (URL for macs / URL, user, password for windows and linux). If you want to run tests, then set up test environment variables also.
+
+Run the main method in PlannerApplication.java
+
 Go to http://localhost:8080/  
 
 
@@ -178,6 +182,8 @@ Day 3:
 * Started about us page
 Day 4: 
 Day 5: Presentation Day!
+
+<!-- the bottom part of your readme feels unloved -->
 
 ## Code style
 Code style 

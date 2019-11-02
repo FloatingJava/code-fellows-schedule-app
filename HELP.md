@@ -1,5 +1,7 @@
 # Getting Started
 
+<!-- You probably don't need this leftover file that Spring generated automatically! -->
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 

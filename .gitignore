@@ -181,6 +181,7 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 
 ### macOS ###
+# there are SO many .DS_Store files in your code base!
 *.DS_Store
 .AppleDouble
 .LSOverride

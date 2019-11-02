@@ -24,7 +24,8 @@
     <p>Choose your desired path to graduation</p>
 <!--    Reference: https://www.w3schools.com/html/html_form_elements.asp-->
     <form id="search-form">
-        <label for="StartPoint">Starting Class</label>
+        <!-- Indentation in this file is quite inconsistent -->
+        <label for="StartingPoint">Starting Class</label>
         <select name="StartPoint" id="StartingPoint">
             <th:block th:each="course : ${courses}">
                     <option th:text="${course.startDate + ' - ' + course.code}" th:value="${course.id}" th:id="StartPoint"></option>
@@ -94,9 +95,9 @@
         <input type="submit" value="Save EdPlan">
     </form>
 
-  <div id="chart_div"></div>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="/app.js"></script>
-    <script src="/shenanigans.js"></script>
+      <div id="chart_div"></div>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script src="/app.js"></script>
+      <script src="/shenanigans.js"></script>
   </body>
 </html>
